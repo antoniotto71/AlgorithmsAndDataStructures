@@ -3,7 +3,7 @@
 def linear_search(array, search_value)
 
   # We iterate through every element in the array
-  array.each_with_index do |element, index |
+  array.each_with_index do |element, index|
 
     # If we find the value we're looking for, we return its index:
     if element == search_value
