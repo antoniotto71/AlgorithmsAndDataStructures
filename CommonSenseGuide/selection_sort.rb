@@ -13,7 +13,7 @@ def selection_sort(array)
       array[i], array[lowest_number_index] = array[lowest_number_index], array[i]
     end
   end
-  return array, c
+  [array, c]
 end
 
 p selection_sort([50, 40, 30, 20, 10, 9, 8, 7, 6])
