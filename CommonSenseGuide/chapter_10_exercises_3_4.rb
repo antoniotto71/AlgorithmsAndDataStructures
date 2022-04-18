@@ -1,11 +1,22 @@
 def print_numbers(array)
   array.each do |item|
-    if item.is_a?(Integer)
-      puts item
-    else
+    if item.is_a?(Array)
       print_numbers(item)
+    else
+      puts item
     end
   end
+end
+
+def flatten(array, result = []) # it's necessary to put the result as a function parameter
+  array.each do |item|
+    if item.is_a?(Array)
+      flatten(item, result)
+    else
+      result << item
+    end
+  end
+  result
 end
 
 array = [1,
@@ -28,6 +39,8 @@ array = [1,
          ]
 
 print_numbers(array)
+
+p flatten(array)
 
 def sum(low, high)
   if high == low
